@@ -1,4 +1,4 @@
-# ReconX (Example Name)
+# ReconX
 
 Automated reconnaissance wrapper for Subfinder, Amass, Httpx, and Nuclei.  
 Generates clean HTML reports with clickable links and severity-colored vulnerabilities.
