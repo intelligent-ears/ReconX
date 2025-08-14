@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Recon Report - {{ domain }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+        h1, h2 { color: #333; }
+        .container { background: white; padding: 20px; border-radius: 8px; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 8px; border-bottom: 1px solid #ddd; }
+        th { background: #eee; text-align: left; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recon Report for {{ domain }}</h1>
+
+        <h2>Alive Hosts ({{ total_hosts }})</h2>
+        <ul>
+            {% for host in hosts %}
+                <li><a href="{{ host }}" target="_blank">{{ host }}</a></li>
+            {% endfor %}
+        </ul>
+
+        <h2>Vulnerabilities ({{ total_vulns }})</h2>
+        <table>
+            <tr>
+                <th>Severity</th>
+                <th>Finding</th>
+            </tr>
+            {% for vuln in vulnerabilities %}
+            <tr>
+                <td style="color: {{ vuln.color }}; font-weight: bold;">
+                    {{ vuln.severity.upper() }}
+                </td>
+                <td>{{ vuln.text }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
