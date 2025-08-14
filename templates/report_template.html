@@ -40,6 +40,10 @@
             </tr>
             {% endfor %}
         </table>
+        <h2>Archived URLs (Waybackurls)</h2>
+	<pre>{% for url in wayback_urls %}{{ url }}\n{% endfor %}</pre>
+	<h2>Archived URLs (GAU)</h2>
+	<pre>{% for url in gau_urls %}{{ url }}\n{% endfor %}</pre>
     </div>
 </body>
 </html>
